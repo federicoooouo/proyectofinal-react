@@ -1,0 +1,41 @@
+[
+    {
+        "id": 1,
+        "nombre": "Groupies",
+        "precio":  "5000",
+        "stock": 10,
+        "descripcion": "Coleccion groupies",
+        "img": "/assets/img/gruopies.png"
+    },
+
+    {
+        "id": 2,
+        "nombre": "Monkeys",
+        "precio":  "15000",
+        "stock": 3,
+        "descripcion": "Coleccion monkeys",
+        "img":  "/assets/img/monkey.png"
+
+    },
+
+    {
+        "id": 3,
+        "nombre": "Bear",
+        "precio":  "9000",
+        "stock": 9,
+        "descripcion": "Coleccion bear",
+        "img": "/assets/img/bearhungry.svg"
+
+    },
+
+    {
+        "id": 4,
+        "nombre": "Cyberpunk",
+        "precio":  "45000",
+        "stock": 8,
+        "descripcion": "Coleccion cyberpunk",
+        "img": "/assets/img/cyberpunk.webp"
+
+    }
+
+]

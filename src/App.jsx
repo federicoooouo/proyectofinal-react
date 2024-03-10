@@ -6,7 +6,8 @@ import Footer from "./Componentes/Footer/Footer"
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import ErrorNot from "./Componentes/ErrorNot/ErrorNot"
 import ItemCount from "./Componentes/ItemCount/ItemCount"
-
+import Carrito from "./Componentes/Carrito/Carrito"
+import CartProvider from "./Contexto/CartContext"
 
 function App() {
 
@@ -16,25 +17,30 @@ function App() {
 
 
 <BrowserRouter>
-<NavBar/>
+
+<CartProvider>
+
+  <NavBar/>
 
 
-<Routes>
-
-  <Route path='/' element={<ItemListContainer greeting={"Tienda de Nfts"}/>}/>
-  <Route path='/detalle/:idProducto' element={<ItemDetailContainer/>}/>
-  <Route path='/contador' element={<ItemCount initial={1} stock={12}/>}/>
+  <Routes>
   
+  <Route path='/' element={<ItemListContainer/>}/>
+  <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
+  <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
+  <Route path='/carrito' element={<Carrito/>}/>
   <Route panth='*'element={<ErrorNot/>}/>
 
 
-</Routes>
+  </Routes>
 
 
 
 
       
 <Footer/>
+
+</CartProvider>
 
 </BrowserRouter>
 

@@ -5,7 +5,8 @@
         "precio":  "5000",
         "stock": 10,
         "descripcion": "Coleccion groupies",
-        "img": "/assets/img/gruopies.png"
+        "img": "/assets/img/gruopies.png",
+        "categoria":"Groupies"
     },
 
     {
@@ -14,7 +15,9 @@
         "precio":  "15000",
         "stock": 3,
         "descripcion": "Coleccion monkeys",
-        "img":  "/assets/img/monkey.png"
+        "img":  "/assets/img/monkey.png",
+        "categoria":"Monkeys"
+
 
     },
 
@@ -24,7 +27,9 @@
         "precio":  "9000",
         "stock": 9,
         "descripcion": "Coleccion bear",
-        "img": "/assets/img/bearhungry.svg"
+        "img": "/assets/img/bearhungry.svg",
+        "categoria":"Bear"
+
 
     },
 
@@ -34,7 +39,9 @@
         "precio":  "45000",
         "stock": 8,
         "descripcion": "Coleccion cyberpunk",
-        "img": "/assets/img/cyberpunk.webp"
+        "img": "/assets/img/cyberpunk.webp",
+        "categoria":"Cyberpunk"
+
 
     }
 

@@ -4,20 +4,21 @@ import { useParams } from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 
+    const[producto,setProducto]= useState([]);
+
     const{id} = useParams();
 
-    const[producto,setProducto]= useState([]);
 
     useEffect(() => {
 
     const fetchData = async () => {
         try{
-        const response = await fetch("./productos.json");
+        const response = await fetch("/productos.json");
         const data = await response.json()
         const product = data.find((p)=>p.id == id)
         setProducto(product);
         }catch(error){
-        console.log("error 404" + error) 
+        console.log("error 404 " +error) 
 
         }
     }

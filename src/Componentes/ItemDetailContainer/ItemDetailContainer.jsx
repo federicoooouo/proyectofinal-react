@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
 import { useParams } from 'react-router-dom';   
+import { getFirestore,doc,getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -10,23 +11,17 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
+        const db = getFirestore();
+        
+        const nuevoDoc = doc(db,"nfts",id)
 
-    const fetchData = async () => {
-        try{
-        const response = await fetch("/productos.json");
-        const data = await response.json()
-        const product = data.find((p)=>p.id == id)
-        setProducto(product);
-        }catch(error){
-        console.log("error 404 " +error) 
+        getDoc(nuevoDoc).then((res)=> {
+            const data = res.data()
+            const nuevoProducto = {id: res.id,...data}
+            setProducto(nuevoProducto)
 
-        }
-    }
-
-    fetchData()
-
-    },[id])
-
+        })
+    },[])
 
 
 

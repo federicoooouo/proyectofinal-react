@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import {collection,getDocs,getFirestore,query,where} from 'firebase/firestore'
 
 
 const ItemListContainer = () => {
@@ -10,30 +11,22 @@ const ItemListContainer = () => {
   const{categoriaId} = useParams()
 
   useEffect(() => {
+      const db = getFirestore()
+      const misProductos = 
+      categoriaId ?
+      query(collection(db, "nfts"),where("categoria", "==", categoriaId))
+      :
+      collection(db, "nfts")
 
-    const fetchData = async () => {
-      try{
-        const response = await fetch("/productos.json");
-        const data = await response.json()
-        
-        if(categoriaId){
-          
-          const filteredProducts = data.filter((p) => p.categoria == categoriaId)
-          setProductos(filteredProducts)
+      getDocs(misProductos)
+      .then((res)=>{
+        const nuevosProductos = res.docs.map((doc)=>{
+          const data = doc.data()
+          return{id: doc.id,...data}
+        })
+        setProductos(nuevosProductos)
+      })
 
-        }else{
-          setProductos(data)
-        }
-
-
-        
-      }catch(error){
-        console.log("error 404" + error) 
-
-      }
-    }
-
-  fetchData()
 
   },[categoriaId])
 

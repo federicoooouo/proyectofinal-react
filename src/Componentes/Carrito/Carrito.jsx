@@ -5,7 +5,7 @@ import CarritoItem from '../CarritoItem/CarritoItem'
 
 const Carrito = () => {
 
-const{carrito,vaciarCarrito,eliminarItem,totalCarrito} = useContext(CartContext)
+const{carrito,vaciarCarrito,eliminarDelCarrito,totalCarrito} = useContext(CartContext)
 
 
   return (
@@ -21,11 +21,13 @@ const{carrito,vaciarCarrito,eliminarItem,totalCarrito} = useContext(CartContext)
         <>
         <h1>Nfts del carrito</h1>
         {carrito.map((p)=>(
-          <CarritoItem key={p.id} producto={p} eliminarItem={eliminarItem}/>
+          <CarritoItem key={p.id} producto={p}/>
       ))}
       
         <p>total: ${totalCarrito()}</p>
         <button onClick={vaciarCarrito}>Vaciar carrito</button>
+
+          <Link to={"/checkout"}>completar pedido</Link>
 
         </>
 

@@ -21,6 +21,11 @@ const CartProvider = ({children}) => {
 
     }
 
+    const eliminarDelCarrito = (productoId) => {
+        const newCarrito = carrito.filter(item => item.producto.id!= productoId)
+        setCarrito(newCarrito)
+    }
+
 
 
 
@@ -46,6 +51,7 @@ const CartProvider = ({children}) => {
             carrito,
             agregarAlCarrito,
             vaciarCarrito,
+            eliminarDelCarrito,
             cantidadCarrito,
             totalCarrito
             

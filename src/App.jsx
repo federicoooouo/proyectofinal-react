@@ -8,6 +8,7 @@ import ErrorNot from "./Componentes/ErrorNot/ErrorNot"
 import ItemCount from "./Componentes/ItemCount/ItemCount"
 import Carrito from "./Componentes/Carrito/Carrito"
 import CartProvider from "./Contexto/CartContext"
+import Checkout from "./Componentes/Checkout/Checkout"
 
 function App() {
 
@@ -29,6 +30,7 @@ function App() {
   <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
   <Route path='/detalle/:id' element={<ItemDetailContainer/>}/>
   <Route path='/carrito' element={<Carrito/>}/>
+  <Route path='/checkout' element={<Checkout/>}/>
   <Route panth='*'element={<ErrorNot/>}/>
 
 

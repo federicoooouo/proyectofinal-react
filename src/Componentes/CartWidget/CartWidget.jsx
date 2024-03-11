@@ -3,13 +3,13 @@ import { CartContext } from '../../Contexto/CartContext'
 
 const CartWidget = () => {
 
-    const{totalQuantity} = useContext(CartContext)
+    const{cantidadCarrito} = useContext(CartContext)
   return (
     <div>
 
     <p>carrito</p>
 
-    <p>{totalQuantity == 0 ? null : totalQuantity}</p>
+    <p>{cantidadCarrito() == 0 ? null : cantidadCarrito()}</p>
 
     </div>
   )

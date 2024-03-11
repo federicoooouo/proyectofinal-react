@@ -5,35 +5,49 @@ export const CartContext = createContext()
 const CartProvider = ({children}) => {
 
     const[carrito,setCarrito] = useState([])
-    const[total, setTotal] = useState(0)
-    const[totalQuantity,setTotalQuantity] = useState()
+
     
     const agregarAlCarrito = (producto,cantidad) =>{
 
-        console.log(producto)
-        console.log(cantidad)
+        const productoSelect = carrito.findIndex(prod => prod.producto.id == producto.id)
+        
+        if(productoSelect == -1){
+            setCarrito([...carrito,{producto,cantidad}])
+        }else{ 
+            const newCarrito = [...carrito] 
+            newCarrito[productoSelect].cantidad += cantidad
+            setCarrito(newCarrito)
+        }
 
     }
-    const eliminarProducto = () =>{
 
-    }
+
+
+
+
     const vaciarCarrito = () =>{
+        setCarrito([])
 
     }
     const cantidadCarrito = () =>{
+        
+        const totalQuantity = carrito.reduce((total,item) => total+item.cantidad,0)
+        return totalQuantity
 
     }
     const totalCarrito = () =>{
-
+        const totalPrice = carrito.reduce((total,item) => total + (item.producto.precio * item.cantidad),0)
+        return totalPrice
     }
 
 
     return(
         <CartContext.Provider value={{
             carrito,
-            total,
-            totalQuantity,
-            agregarAlCarrito
+            agregarAlCarrito,
+            vaciarCarrito,
+            cantidadCarrito,
+            totalCarrito
             
         }}>
             {children}

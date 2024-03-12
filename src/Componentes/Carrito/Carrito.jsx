@@ -3,6 +3,7 @@ import { CartContext } from '../../Contexto/CartContext'
 import { Link } from 'react-router-dom'
 import CarritoItem from '../CarritoItem/CarritoItem'
 
+
 const Carrito = () => {
 
 const{carrito,vaciarCarrito,eliminarDelCarrito,totalCarrito} = useContext(CartContext)
@@ -21,7 +22,7 @@ const{carrito,vaciarCarrito,eliminarDelCarrito,totalCarrito} = useContext(CartCo
         <>
         <h1>Nfts del carrito</h1>
         {carrito.map((p)=>(
-          <CarritoItem key={p.id} producto={p}/>
+          <CarritoItem eliminarDelCarrito={eliminarDelCarrito} key={p.id} producto={p}/>
       ))}
       
         <p>total: ${totalCarrito()}</p>

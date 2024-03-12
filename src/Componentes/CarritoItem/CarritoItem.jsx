@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const CarritoItem = (producto,eliminarDelCarrito) => {
+const CarritoItem = ({producto,eliminarDelCarrito}) => {
 return (
     <div>
 
@@ -13,7 +13,8 @@ return (
 
             <p>valor unidad: ${producto.producto.precio*producto.cantidad}</p>
 
-            <button onClick={()=>eliminarItem(producto.producto.id)}>elimanr producto</button>
+            <button onClick={()=>eliminarDelCarrito(producto.producto.id)}>eliminar producto</button>
+
 
 
 

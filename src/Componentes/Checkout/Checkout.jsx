@@ -1,6 +1,8 @@
 import React,{useContext, useState} from 'react'
 import { collection,addDoc,updateDoc,doc,getDoc, getFirestore } from 'firebase/firestore'
 import { CartContext } from '../../Contexto/CartContext'
+import ListGroup from 'react-bootstrap/ListGroup';
+
 
 function Checkout() {
 
@@ -78,7 +80,7 @@ const manejadorFormulario = (event) => {
 
 return (
     <div>
-
+        <ListGroup>
         <h1>Ingresa los datos</h1>
 
         <form onSubmit={manejadorFormulario}>
@@ -93,31 +95,50 @@ return (
                 </p>
                 </div>
             ))}
-
+    
             <div>
                 <div>
-                    <label htmlFor='nombre'> nombre </label>
+                <ListGroup.Item>
+
+                    <label> nombre </label>
                     <input name='nombre' type="text" onChange={(e)=>setNombre(e.target.value)}/>
-                </div>
+                    </ListGroup.Item>
 
+                </div>
                 <div>
-                    <label htmlFor='apellido'> apellido </label>
+                <ListGroup.Item>
+
+                    <label> apellido </label>
                     <input name='apellido' type="text" onChange={(e)=>setApellido(e.target.value)}/>
-                </div>
-                <div>
+                    </ListGroup.Item>
 
-                    <label htmlFor='Telefono'> tel </label>
+                </div>
+
+                <div>
+                <ListGroup.Item>
+
+                    <label> tel </label>
                     <input name='Telefono' type="text" onChange={(e)=>setTelefono(e.target.value)}/>
+                    </ListGroup.Item>
+
                 </div>
 
                 <div>
-                    <label htmlFor='Email'> email </label>
+                <ListGroup.Item>
+
+                    <label> email </label>
                     <input name='Email' type="email" onChange={(e)=>setEmail(e.target.value)}/>
+                    </ListGroup.Item>
+
                 </div>
 
                 <div>
-                    <label htmlFor='EmailConfirmacion'> email confirmacion</label>
+                <ListGroup.Item>
+
+                    <label> email confirmacion</label>
                     <input name='EmailConfirmacion' type="email" onChange={(e)=>setEmailConfirmacion(e.target.value)}/>
+                    </ListGroup.Item>
+
                 </div>
 
                 <button type='submit'>completar compra</button>
@@ -138,7 +159,7 @@ return (
 
         </form>
 
-
+</ListGroup>
     </div>
 )
 }

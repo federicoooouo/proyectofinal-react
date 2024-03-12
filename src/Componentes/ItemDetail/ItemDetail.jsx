@@ -1,5 +1,7 @@
 import React,{useState, useContext} from 'react'
 import ItemCount from '../ItemCount/ItemCount'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../Contexto/CartContext'
 
@@ -18,14 +20,22 @@ const agregarCarrito = (count) => {
 
 return (
     <div>
-        <h1>{producto.nombre}</h1>
-        <img src={producto.img} alt={producto.nombre} />
-        <h3>{producto.precio}</h3>
-        <h3>{producto.stock}</h3>
-        <p>{producto.descripcion}</p>
+<Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={producto.img} />
+      <Card.Body>
+        <Card.Title>{producto.nombre}</Card.Title>
+        <Card.Text>
+            <p>{producto.descripcion}</p>
+            <p>{producto.stock}</p>
+            <p>${producto.precio}</p>
+            {carrito ?  <Link to={'/carrito'}>ir al carrito</Link> : <ItemCount initial={1} stock={producto.stock} agregarCarrito={agregarCarrito}/>}
 
-        {carrito ?  <Link to={'/carrito'}>ir al carrito</Link> : <ItemCount initial={1} stock={producto.stock} agregarCarrito={agregarCarrito}/>
- }
+        </Card.Text>
+        
+      </Card.Body>
+    </Card> 
+
+ 
 
     </div>
 )

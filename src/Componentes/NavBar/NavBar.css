@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif; }
+
+    .navLinks{
+       background-color: black;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        padding-left: 100px;
+        letter-spacing: 9px;
+        list-style: none;
+        padding-bottom: 50px;
+        padding-top: 50px;
+    }
+
+    .navLinks li a{
+        text-decoration: none;
+        color: white;
+    }
+
+    .navLinks li a:hover{
+        color:#f07cbf
+    }
+
+    .navLinks li:hover{
+        transform: scale(1.2, 1.4);
+        transition: 0.5s;
+    }
+
+
+

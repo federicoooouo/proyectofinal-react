@@ -22,7 +22,7 @@ const{carrito,vaciarCarrito,eliminarDelCarrito,totalCarrito} = useContext(CartCo
         <>
         <h1>Nfts del carrito</h1>
         {carrito.map((p)=>(
-          <CarritoItem eliminarDelCarrito={eliminarDelCarrito} key={p.id} producto={p}/>
+          <CarritoItem eliminarDelCarrito={eliminarDelCarrito} key={p.producto.id} producto={p}/>
       ))}
       
         <p>total: ${totalCarrito()}</p>

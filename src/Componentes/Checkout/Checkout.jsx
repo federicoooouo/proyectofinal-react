@@ -90,10 +90,8 @@ return (
             
                 <div key={producto.producto.id}>
                 
-            <p>
-
-                    {producto.producto.nombre} x {producto.cantidad}
-                </p>
+            <p>{producto.producto.nombre} x {producto.cantidad}</p>
+                
                 </div>
             ))}
     

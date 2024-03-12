@@ -8,8 +8,9 @@ const CartWidget = () => {
   return (
     <div>
 
-    <p className='carritoProd'>Productos:
-    </p>
+
+    <p className='carritoProd'>Productos: </p>
+    
 
     <p className='carritoProd'>{cantidadCarrito() == 0 ? null : cantidadCarrito()}</p>
 

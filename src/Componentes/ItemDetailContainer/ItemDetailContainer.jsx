@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { useParams } from 'react-router-dom';   
-import { getFirestore,doc,getDoc } from 'firebase/firestore';
+import { useParams } from 'react-router-dom'; 
+import { db } from '../../firebase/config';  
+import {doc,getDoc } from 'firebase/firestore';
 
 const ItemDetailContainer = () => {
 
@@ -11,7 +12,7 @@ const ItemDetailContainer = () => {
 
 
     useEffect(() => {
-        const db = getFirestore();
+        
         
         const nuevoDoc = doc(db,"nfts",id)
 

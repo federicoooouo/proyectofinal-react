@@ -1,5 +1,6 @@
 import React,{useContext, useState} from 'react'
-import { collection,addDoc,updateDoc,doc,getDoc, getFirestore } from 'firebase/firestore'
+import { collection,addDoc,updateDoc,doc,getDoc} from 'firebase/firestore'
+import { db } from '../../firebase/config';
 import { CartContext } from '../../Contexto/CartContext'
 import ListGroup from 'react-bootstrap/ListGroup';
 
@@ -27,7 +28,7 @@ const manejadorFormulario = (event) => {
         return;
     }
 
-    const db = getFirestore()
+
 
     const orden ={
         items: carrito.map((producto) => ({
